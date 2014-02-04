@@ -15,11 +15,12 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class RunFragment extends SherlockFragment {
     private Button mStartButton, mStopButton;
     private TextView mStartedTextView, mLatitudeTextView, mLongitudeTextView, mAltitudeTextView, mDurationTextView;
-
+    private RunManager mRunManager;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        mRunManager = RunManager.get(getActivity());
     }
 
     public static RunFragment newInstance(){
@@ -41,9 +42,30 @@ public class RunFragment extends SherlockFragment {
         mDurationTextView = (TextView) view.findViewById(R.id.run_durationTextView);
 
         mStartButton = (Button) view.findViewById(R.id.run_startButton);
+        mStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRunManager.startLocationUpdates();
+                updateUI();
+            }
+        });
         mStopButton = (Button) view.findViewById(R.id.run_stopButton);
+        mStopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRunManager.stopLocationUpdates();
+                updateUI();
+            }
+        });
+        updateUI();
          return view;
 
+    }
+
+    private void updateUI() {
+       boolean started = mRunManager.isTrackingRun();
+        mStartButton.setEnabled(!started);
+        mStopButton.setEnabled(started);
     }
 
 }
