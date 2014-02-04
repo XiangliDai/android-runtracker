@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RunTracker.iml" filepath="$PROJECT_DIR$/RunTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RunTracker/RunTracker-RunTracker.iml" filepath="$PROJECT_DIR$/RunTracker/RunTracker-RunTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/libraries/actionbarsherlock/actionbarsherlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-runtracker.iml" filepath="$PROJECT_DIR$/android-runtracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
+    </modules>
+  </component>
+</project>
+
